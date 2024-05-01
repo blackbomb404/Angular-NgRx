@@ -1,0 +1,12 @@
+<ul>
+  @for(cartItem of (cartItems$ | async); track cartItem.product.id){
+    <li>
+      <p>#{{cartItem.product.id}}: {{cartItem.product.name}}</p>
+      <button type="button" class="remove-from-cart-btn" (click)="removeFromCart(cartItem.product.id)">×</button>
+    </li>
+  }@empty {
+    <p>Cart is empty</p>
+  }
+</ul>
+<button type="button" (click)="clearCart()"
+  [disabled]="(cartItems$ | async)?.length === 0">Clear Cart</button>

@@ -1,0 +1,11 @@
+<form>
+  <input type="number" [value]="(scoreBoard$ | async)?.home" />
+  ×
+  <input type="number" [value]="(scoreBoard$ | async)?.away" />
+</form>
+<div>
+  <button type="button" (click)="homeScore()">Home score</button>
+  <button type="button" (click)="awayScore()">Away score</button>
+</div>
+<p><strong>{{scoreString$ | async}}</strong></p>
+<p>Total Scored: <strong>{{totalScored$ | async}}</strong></p>

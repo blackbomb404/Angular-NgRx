@@ -1,0 +1,13 @@
+<section>
+  <h2>Product List</h2>
+  <div class="product-list">
+    @for (card of (cards$ | async); track card.id) {
+      <app-card
+        [id]="card.id"
+        [name]="card.name"
+        [price]="card.price" />
+    }
+  </div>
+  <button type="button" (click)="loadMore()">Load More</button>
+</section>
+<app-cart />

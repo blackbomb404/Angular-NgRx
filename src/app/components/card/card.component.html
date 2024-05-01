@@ -1,0 +1,5 @@
+<p>name: <strong>{{name}}</strong></p>
+<p>price: <strong>{{price}}</strong></p>
+<button type="button" (click)="onCart ? removeFromCart() : addToCart()">
+  {{ onCart ? 'Remove From Cart' : 'Add To Cart' }}
+</button>
